@@ -1,0 +1,88 @@
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+ul, li {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+  color: #333;
+}
+
+main {
+  padding: 5em 0;
+}
+
+.ttl {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+main .inner {
+  padding: 0 1em;
+  max-width: 70em;
+  margin: 0 auto;
+}
+.assembly_container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 1em;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+.assembly_box {
+  border: .2em solid #848383;
+  padding: 1em;
+}
+
+.assembly_boxText {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.assembly_parts {
+  border: .2em solid #848383;
+  padding: 1em;
+}
+
+.assembly_container li + li {
+  margin-top: 1em;
+}
+
+.assembly_container li {
+  padding: 1em;
+  background: #333;
+  color: #fff;
+}
+
+.btn {
+  border: .2em;
+  background: #b2b1b1;
+  border: .3em solid #848383;
+  border-radius: 3em;
+  color: #333;
+  display: inline-block;
+  padding: 2em 3em;
+  margin-top: 5em;
+  font-size: .7em;
+}

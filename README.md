@@ -48,3 +48,11 @@ export default tseslint.config({
   },
 })
 ```
+▼vite で作成
+$ npm create vite@latest ファイル名
+react
+typeScript
+を選択
+
+▼ react-dnd と react-dnd-html5-backend をインストール
+$ npm install react-dnd react-dnd-html5-backend
