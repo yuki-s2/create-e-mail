@@ -54,5 +54,7 @@ react
 typeScript
 を選択
 
+https://ja.vite.dev/guide/
+
 ▼ react-dnd と react-dnd-html5-backend をインストール
 $ npm install react-dnd react-dnd-html5-backend

@@ -3,6 +3,7 @@ import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Link } from "react-router-dom";
 import Layout from "../layout/Layout";
+import { useParts } from "../pages/PartsContext";
 
 const ItemType = {
   PART: "part",
@@ -18,7 +19,7 @@ const [droppedParts, setDroppedParts] = useState<string[]>([]);
   // ドラッグ可能なアイテム（li）
 const Part = ({ name }: { name: string }) => {
     const [{ isDragging }, dragRef] = useDrag(() => ({
-      type: ItemType.PART,
+      type: ItemType.PART,//一意のID
       item: { name },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
@@ -41,20 +42,23 @@ const Part = ({ name }: { name: string }) => {
   
   // ドラッグ元のリスト
 const PartsList = () => {
-    const parts = ["パーツ01", "パーツ02", "パーツ03", "パーツ04", "パーツ05"];
-    return (
-      <div className="assembly_parts">
-        <ul>
-          {parts.map((part, index) => (
-            <Part key={index} name={part} />
-          ))}
-        </ul>
-      </div>
-    );
-  };
+  //Input.tsxから追加されたパーツ
+  const { parts } = useParts();
+
+  return (
+    <div className="assembly_parts">
+      <ul>
+        {parts.map((part, index) => (
+          <Part key={index} name={part} />
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 
 // ドロップターゲット
+// void → 戻り値のない関数
 const DropBox = ({ droppedParts, onDrop }: { droppedParts: string[]; onDrop: (item: {name: string}) => void; }) => {
     const [, dropRef] = useDrop(() => ({
       accept: ItemType.PART,
